@@ -1,0 +1,68 @@
+@keyframes moveRight{
+0% {transform : translateX(-100%)}
+100% {transform : translateX(100%) }
+}
+.moveRight{
+    animation: moveRight 10s linear infinite;
+    display: flex;
+}
+/* Make sure the container has enough perspective */
+.deals-slider-container {
+width: 100%;
+height: 600px;  /* Increased height to better fit the items */
+perspective: 1000px;  /* Adjusted perspective for a smoother rotation */
+overflow: hidden;
+position: relative;
+}
+
+/* Rotate the slider items along the Y-axis */
+.deals-slider {
+width: 100%;
+height: 100%;
+padding: 5px;
+position: absolute;
+transform-style: preserve-3d;
+animation: rotateDealsSlider 20s linear infinite;
+}
+
+/* Ensure the individual items are big enough to display all content */
+.deals-slider-item {
+position: absolute;
+width: 150px;  
+height: 270px;  
+top: 25%;
+left: 35%;
+bottom: 10%;
+transform-style: preserve-3d;
+backface-visibility: hidden;
+transform-origin: center;
+background: white;
+border-radius: 10px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+box-sizing: border-box;
+
+}
+
+.deals-slider-item img {
+width: 100%;
+height: 150px; 
+border-radius: 6px;
+}
+
+@keyframes rotateDealsSlider {
+from {
+transform: rotateY(0deg);
+}
+to {
+transform: rotateY(-360deg);
+}
+}
+
+.deals-slider {
+visibility: visible;
+}
+

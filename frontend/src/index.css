@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+/* Make slick arrows visible */
+.slick-prev::before,
+.slick-next::before {
+  color: white !important;
+  font-size: 30px;
+  opacity: 1 !important;
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 50;
+  display: block !important;
+}
